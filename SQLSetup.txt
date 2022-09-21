@@ -1,0 +1,41 @@
+NOTE: File to be deleted after use
+
+1. DB Name: portal
+2. Table name: accounts
+3. Run SQL:
+
+
+CREATE TABLE IF NOT EXISTS `accounts` (
+	`id` int(11) NOT NULL AUTO_INCREMENT,
+  	`username` varchar(50) NOT NULL,
+  	`password` varchar(255) NOT NULL,
+  	`email` varchar(100) NOT NULL,
+    PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+
+INSERT INTO `accounts` (`id`, `username`, `password`, `email`, `email`) VALUES (1, 'test', '9f86d081884c7d659a2feaa0c55ad015a3bf4f1b2b0b822cd15d6c15b0f00a08', 'test@test.com', 'admin');
+
+
+4. You shoudld now have 1 valid entry, and a user account of user: test, pass: test - this is also an admin account
+5. Table name: comments
+6. Run SQL:
+
+
+CREATE TABLE IF NOT EXISTS `comments` (
+	`id` int(11) NOT NULL AUTO_INCREMENT,
+	`page_id` int(11) NOT NULL,
+	`parent_id` int(11) NOT NULL DEFAULT '-1',
+	`name` varchar(255) NOT NULL,
+	`content` text NOT NULL,
+	`submit_date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+	PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+
+INSERT INTO `comments` (`id`, `page_id`, `parent_id`, `name`, `content`, `submit_date`) VALUES
+(1, 1, -1, 'Test 1', 'Test post one, this is a test', '2022-09-20 09:35:15'),
+(2, 1, 11, 'Test 2', 'Test post two, this is a test', '2022-09-20 09:38:24'),
+(3, 1, -1, 'Test 3', 'Test post three, this is a test', '2022-09-21 09:21:12');
+
+
+7. You should now have 3 comment entries with test cases
+8. Profit
