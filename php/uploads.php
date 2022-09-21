@@ -18,7 +18,7 @@ if (isset($_POST['uploadBtn']) && $_POST['uploadBtn'] == 'Upload')
  
     // sanitise file-name
     // $newFileName = md5(time() . $fileName) . '.' . $fileExtension;
-    $newFileName = $fileName . '.' . $fileExtension;
+    $newFileName = $fileName;
  
     // check if file has one of the following extensions
     $allowedfileExtensions = array('jpg', 'gif', 'png', 'zip', 'txt', 'xls', 'doc');
