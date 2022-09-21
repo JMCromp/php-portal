@@ -14,7 +14,7 @@ if (isset($_POST['uploadBtn']) && $_POST['uploadBtn'] == 'Upload')
     $fileSize = $_FILES['uploadedFile']['size'];
     $fileType = $_FILES['uploadedFile']['type'];
     $fileNameCmps = explode(".", $fileName);
-    $fileExtension = strtolower(end($fileNameCmps));
+    $fileExtension = strtolower(next($fileNameCmps));
  
     // sanitise file-name
     // $newFileName = md5(time() . $fileName) . '.' . $fileExtension;
@@ -40,7 +40,7 @@ if (isset($_POST['uploadBtn']) && $_POST['uploadBtn'] == 'Upload')
     }
     else
     {
-      $message = 'Upload failed. Allowed file types: ' . implode(',', $allowedfileExtensions);
+      $message = 'Upload failed. Allowed file types: ' . implode(', ', $allowedfileExtensions);
     }
   }
   else
