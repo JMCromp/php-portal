@@ -13,7 +13,7 @@ CREATE TABLE IF NOT EXISTS `accounts` (
     PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
-INSERT INTO `accounts` (`id`, `username`, `password`, `email`, `email`) VALUES (1, 'test', '9f86d081884c7d659a2feaa0c55ad015a3bf4f1b2b0b822cd15d6c15b0f00a08', 'test@test.com', 'admin');
+INSERT INTO `accounts` (`id`, `username`, `password`, `email`, `role`) VALUES (1, 'test', '9f86d081884c7d659a2feaa0c55ad015a3bf4f1b2b0b822cd15d6c15b0f00a08', 'test@test.com', 'admin');
 
 
 4. You shoudld now have 1 valid entry, and a user account of user: test, pass: test - this is also an admin account
