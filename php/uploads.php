@@ -25,7 +25,7 @@ if (isset($_POST['uploadBtn']) && $_POST['uploadBtn'] == 'Upload')
     if (in_array($fileExtension, $allowedfileExtensions))
     {
       // directory in which the uploaded file will be moved
-      $uploadFileDir = '/var/www/html/uploaded_files';
+      $uploadFileDir = '/var/www/html/uploaded_files/';
       $dest_path = $uploadFileDir . $newFileName;
  
       if(move_uploaded_file($fileTmpPath, $dest_path)) 
@@ -95,10 +95,10 @@ require_once ('authrole.php');
           <input type="submit" name="uploadBtn" value="Upload"/>
         </form>
         <?php
-          if ($handle = opendir('/var/www/html/uploaded_files')) {
+          if ($handle = opendir('/var/www/html/uploaded_files/')) {
             while (false !== ($file = readdir($handle))) {
               if ($file != "." && $file != "..") {
-                  $thelist .= '<li><a href="/var/www/html/uploaded_files'.$file.'">'.$file.'</a></li>';
+                  $thelist .= '<li><a href="/var/www/html/uploaded_files/'.$file.'">'.$file.'</a></li>';
                 }
               }
               closedir($handle);
